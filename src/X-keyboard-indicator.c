@@ -18,7 +18,7 @@ int main( int argc, char *argv[] ){
 	/* open X display */
 	Display *display = XOpenDisplay( NULL ); /* get display from DISPLAY environmental variable */
 	if( display == NULL ){
-		perror( "Error: Couldn't open X display\n" );
+		printf( "Error: Couldn't open X display\n" );
 		return 1;
 	}
 	
@@ -31,9 +31,9 @@ int main( int argc, char *argv[] ){
 	if( status == Success ){
 		printf( "XkbGetIndicatorState:\t%d\n", state );
 	} else if( status == BadMatch ){
-		perror( "Error: Xkb is not availabe\n" );
+		printf( "Error: Xkb is not availabe\n" );
 	} else {
-		perror( "Error: XkbGetIndicatorState failed\n" );
+		printf( "Error: XkbGetIndicatorState failed\n" );
 	}
 	
 	/* close X display */
