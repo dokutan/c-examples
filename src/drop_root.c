@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+#include <stdlib.h> // for system()
+
 int main( int argc, char *argv[] ){
 	
 	// print real and effective uid
@@ -18,6 +20,8 @@ int main( int argc, char *argv[] ){
 	printf( "effective gid: %d\n", getegid() );
 	
 	printf( "\n" );
+	
+	// system("touch rootfile");
 	
 	// if root: drop root privileges 
 	// important: set gid before uid
@@ -42,6 +46,8 @@ int main( int argc, char *argv[] ){
 	}
 	
 	printf( "\n" );
+	
+	// system("touch userfile");
 	
 	// print real and effective uid
 	printf( "real uid: %d\n", getuid() );
